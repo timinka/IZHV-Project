@@ -35,9 +35,6 @@ public class CubeSpawner : MonoBehaviour
                 newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
                 newCube.transform.SetParent(transform);
             } else if (i == 2) {
-                spawnPosition = new Vector3(i * gapBetweenCubes - 6.0f, 1.5f, 6.0f);
-                newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
-                newCube.transform.SetParent(transform);
                 spawnPosition = new Vector3(i * gapBetweenCubes - 6.0f, 4.0f, 6.0f);
                 newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
                 newCube.transform.SetParent(transform);
