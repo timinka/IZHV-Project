@@ -1,50 +1,42 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MaterialPlacement : MonoBehaviour
+public class PlusButtonController : MonoBehaviour
 {
-    public Material material1;
-    public Material material2;
-    public Material material3;
-    public Button placeButton;      // Button to trigger material placement
-    public GameObject placedObject; // The object to be placed
+    public GameObject waterPrefab;
+    public GameObject rubberPrefab;
+    public GameObject glassPrefab;
 
-    private int currentIndex = 0;   // Index to track the current material
-    private bool objectVisible = false;  // Flag to track object visibility
-
-    void Start()
+    public void OnButtonClick()
     {
-        // Add a listener to the button click event
-        placeButton.onClick.AddListener(PlaceMaterial);
-
-        // Update instruction text
-        UpdateInstructionText();
+        ShowOptions();
     }
 
-    void PlaceMaterial()
+    void ShowOptions()
     {
-        // Assign the selected material to the placed object
-        placedObject.GetComponent<Renderer>().material = materials[currentIndex];
+        // Implement the UI to show the options (e.g., a dropdown menu)
+        // For simplicity, let's assume you have a UI script that handles this part
 
-        // Toggle object visibility
-        objectVisible = true;
+        // For demonstration purposes, I'll use Debug.Log to represent the user's selection
+        Debug.Log("Options: Water, Rubber, Glass, None");
 
-        // Cycle to the next material
-        currentIndex = (currentIndex + 1) % materials.Length;
-
-        // Update instruction text
-        UpdateInstructionText();
+        // Assume you have a method to handle the user's selection
+        HandleUserSelection();
     }
 
-    void UpdateInstructionText()
+    void HandleUserSelection()
     {
-        // Display instructions based on the current material
-        instructionText.text = "Select a material to place: " + materials[currentIndex].name;
+        // Implement the logic to handle the user's selection
+        // For simplicity, I'll use Debug.Log to represent the placement of the selected prefab
+
+        // Assume you have a method to instantiate and place the selected prefab
+        // You would replace the InstantiatePrefab method with your actual implementation
+        InstantiatePrefab(waterPrefab); // Replace with the selected prefab
     }
 
-    void Update()
+    void InstantiatePrefab(GameObject prefab)
     {
-        // Toggle object visibility based on player's choice
-        placedObject.SetActive(objectVisible);
+        // Instantiate the selected prefab under the plus button
+        Vector3 spawnPosition = transform.position - new Vector3(0, 1, 0);
+        Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 }

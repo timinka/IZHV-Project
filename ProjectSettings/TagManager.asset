@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CubeWater
   - CubeRubber
+  - CubeGlass
+  - Cube
   layers:
   - Default
   - TransparentFX
