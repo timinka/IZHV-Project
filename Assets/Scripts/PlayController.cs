@@ -29,7 +29,7 @@ public class PlatController : MonoBehaviour, IPointerClickHandler
         dropdownMenu3.gameObject.SetActive(false);
         dropdownMenu4.gameObject.SetActive(false);
         ball.SetActive(true);
-        // ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
+        ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
         buttonPlay.SetActive(false);
         buttonEdit.SetActive(true);
     }
