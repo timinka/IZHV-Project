@@ -29,6 +29,10 @@ public class PlayController : MonoBehaviour, IPointerClickHandler
         dropdownMenu3.gameObject.SetActive(false);
         dropdownMenu4.gameObject.SetActive(false);
         ball.SetActive(true);
+        Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+        // set ball movement to zero
+        ballRigidbody.velocity = Vector3.zero;
+        ballRigidbody.angularVelocity = Vector3.zero;
         ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
         buttonPlay.SetActive(false);
         buttonEdit.SetActive(true);

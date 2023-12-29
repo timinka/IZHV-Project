@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CubeSpawner : MonoBehaviour
 {
-    public GameObject cubePrefab;  // Prefab of the cube you want to spawn
-    public int numberOfCubes = 3;   // Number of cubes to spawn
-    public float gapBetweenCubes = 4.0f;  // Gap between cubes
+    public GameObject cubePrefab;  
+    public int numberOfCubes = 3;   
+    public float gapBetweenCubes = 4.0f;  
 
     void Start()
     {

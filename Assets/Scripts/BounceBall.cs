@@ -25,6 +25,14 @@ public class BallBounce : MonoBehaviour
                 return; 
             }
 
+            if (collision.collider.CompareTag("Portal")) {
+                Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+                ballRigidbody.velocity = Vector3.zero;
+                ballRigidbody.angularVelocity = Vector3.zero;
+                ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
+                return;
+            }
+
             bool forcesApplied = false;
 
             for (int i = 0; i < collision.contacts.Length; i++) {
@@ -35,7 +43,7 @@ public class BallBounce : MonoBehaviour
                         bounceForce = 28;
                         forcesApplied = true;
                     } else if (contact.otherCollider.CompareTag("CubeRubber")) {
-                        bounceForce = 22;
+                        bounceForce = 45;
                         forcesApplied = true;
                     } else if (contact.otherCollider.CompareTag("CubeGlass")) {
                         bounceForce = 40;
