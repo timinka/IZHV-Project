@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PlatController : MonoBehaviour, IPointerClickHandler
+public class PlayController : MonoBehaviour, IPointerClickHandler
 {
     public TMPro.TMP_Dropdown dropdownMenu1;
     public TMPro.TMP_Dropdown dropdownMenu2;
