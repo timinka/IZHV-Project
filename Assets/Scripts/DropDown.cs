@@ -9,15 +9,13 @@ public class DropDownController : MonoBehaviour
     public GameObject glassPrefab;
     private GameObject instantiatedPrefab;
 
-    private void Start()
-    {
+    private void Start() {
         myDrop.onValueChanged.AddListener(delegate {
             PlacingBoxes();
         });
     }
 
-    private void PlacingBoxes()
-    {
+    private void PlacingBoxes() {
         DestroyPrefab();
         if (myDrop.value == 1) {
             InstantiatePrefab(waterPrefab);
@@ -28,16 +26,13 @@ public class DropDownController : MonoBehaviour
         }
     }
 
-    private void InstantiatePrefab(GameObject prefab)
-    {
+    private void InstantiatePrefab(GameObject prefab) {
         Vector3 spawnPosition = myDrop.transform.position - new Vector3(0, 3.37f, -0.5f);
         instantiatedPrefab = Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
-     private void DestroyPrefab()
-    {
-        if (instantiatedPrefab != null)
-        {
+     private void DestroyPrefab() {
+        if (instantiatedPrefab != null) {
             Destroy(instantiatedPrefab);
             instantiatedPrefab = null; 
         }

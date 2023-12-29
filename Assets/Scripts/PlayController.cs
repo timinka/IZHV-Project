@@ -13,17 +13,16 @@ public class PlayController : MonoBehaviour, IPointerClickHandler
     public GameObject buttonRetry;
     public GameObject victoryText;
     public GameObject buttonEdit;
+    public GameObject instructionText;
 
-    void Start()
-    {
+    void Start() {
         ball.SetActive(false);
         buttonEdit.SetActive(false);
         victoryText.SetActive(false);
         buttonRetry.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
+    public void OnPointerClick(PointerEventData eventData) {
         dropdownMenu1.gameObject.SetActive(false);
         dropdownMenu2.gameObject.SetActive(false);
         dropdownMenu3.gameObject.SetActive(false);
@@ -36,5 +35,6 @@ public class PlayController : MonoBehaviour, IPointerClickHandler
         ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
         buttonPlay.SetActive(false);
         buttonEdit.SetActive(true);
+        instructionText.SetActive(false);
     }
 }

@@ -6,13 +6,11 @@ public class CubeSpawner : MonoBehaviour
     public int numberOfCubes = 3;   
     public float gapBetweenCubes = 4.0f;  
 
-    void Start()
-    {
+    void Start() {
         SpawnCubes();
     }
 
-    void SpawnCubes()
-    {
+    void SpawnCubes() {
         for (int i = 0; i < 4; i++) {
             Vector3 spawnPosition = new Vector3(i * gapBetweenCubes - 4.0f, 0.0f, 6.0f);
             GameObject newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);

@@ -11,9 +11,9 @@ public class EditController : MonoBehaviour, IPointerClickHandler
     public GameObject ball;
     public GameObject buttonEdit;
     public GameObject buttonDone;
+    public GameObject instructionText;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
+    public void OnPointerClick(PointerEventData eventData) {
         dropdownMenu1.gameObject.SetActive(true);
         dropdownMenu2.gameObject.SetActive(true);
         dropdownMenu3.gameObject.SetActive(true);
@@ -21,5 +21,6 @@ public class EditController : MonoBehaviour, IPointerClickHandler
         ball.SetActive(false);
         buttonEdit.SetActive(false);
         buttonDone.SetActive(true);
+        instructionText.SetActive(true);
     }
 }

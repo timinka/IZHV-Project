@@ -11,9 +11,9 @@ public class RetryController : MonoBehaviour, IPointerClickHandler
     public GameObject buttonPlay;
     public GameObject buttonRetry;
     public GameObject victoryText;
+    public GameObject instructionText;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
+    public void OnPointerClick(PointerEventData eventData) {
         dropdownMenu1.gameObject.SetActive(true);
         dropdownMenu1.value = 0;
         dropdownMenu2.gameObject.SetActive(true);
@@ -26,6 +26,7 @@ public class RetryController : MonoBehaviour, IPointerClickHandler
         buttonPlay.SetActive(true);
         buttonRetry.SetActive(false);
         victoryText.SetActive(false);
+        instructionText.SetActive(true);
         DestroyAllPrefabInstances("CubeGlass");
         DestroyAllPrefabInstances("CubeRubber");
         DestroyAllPrefabInstances("CubeWater");
