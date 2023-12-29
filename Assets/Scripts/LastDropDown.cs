@@ -29,7 +29,7 @@ public class LastDropDownController : MonoBehaviour
     }
 
     private void InstantiatePrefab(GameObject prefab) {
-        Vector3 spawnPosition = myDrop.transform.position - new Vector3(-1, 3.37f, -0.5f);
+        Vector3 spawnPosition = myDrop.transform.position - new Vector3(-2, 3.37f, -2.25f);
         instantiatedPrefab = Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 

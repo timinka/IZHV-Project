@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DropDownController : MonoBehaviour
+public class DropDown3Controller : MonoBehaviour
 {
     public TMPro.TMP_Dropdown myDrop;
     public GameObject waterPrefab;
@@ -9,7 +9,8 @@ public class DropDownController : MonoBehaviour
     public GameObject glassPrefab;
     private GameObject instantiatedPrefab;
 
-    private void Start() {
+    private void Start()
+    {
         myDrop.onValueChanged.AddListener(delegate {
             PlacingBoxes();
         });
@@ -17,6 +18,7 @@ public class DropDownController : MonoBehaviour
 
     private void PlacingBoxes() {
         DestroyPrefab();
+
         if (myDrop.value == 1) {
             InstantiatePrefab(waterPrefab);
         } else if (myDrop.value == 2) {
@@ -27,7 +29,7 @@ public class DropDownController : MonoBehaviour
     }
 
     private void InstantiatePrefab(GameObject prefab) {
-        Vector3 spawnPosition = myDrop.transform.position - new Vector3(1, 3.37f, -2.25f);
+        Vector3 spawnPosition = myDrop.transform.position - new Vector3(-0.65f, 3.37f, -2.25f);
         instantiatedPrefab = Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
