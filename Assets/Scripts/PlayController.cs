@@ -10,12 +10,16 @@ public class PlatController : MonoBehaviour, IPointerClickHandler
     public TMPro.TMP_Dropdown dropdownMenu4;
     public GameObject ball;
     public GameObject buttonPlay;
+    public GameObject buttonRetry;
+    public GameObject victoryText;
     public GameObject buttonEdit;
 
     void Start()
     {
         ball.SetActive(false);
         buttonEdit.SetActive(false);
+        victoryText.SetActive(false);
+        buttonRetry.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -25,7 +29,7 @@ public class PlatController : MonoBehaviour, IPointerClickHandler
         dropdownMenu3.gameObject.SetActive(false);
         dropdownMenu4.gameObject.SetActive(false);
         ball.SetActive(true);
-        ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
+        // ball.transform.position = new Vector3(-8.03f, 2.55f, 6.5f);
         buttonPlay.SetActive(false);
         buttonEdit.SetActive(true);
     }

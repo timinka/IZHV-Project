@@ -3,6 +3,10 @@ using UnityEngine;
 public class BallBounce : MonoBehaviour
 {
     private float bounceForce = 20f; 
+    public GameObject buttonRetry;
+    public GameObject victoryText;
+    public GameObject buttonEdit;
+    public GameObject ball;
 
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.sharedMaterial != null) {
@@ -10,6 +14,14 @@ public class BallBounce : MonoBehaviour
                 Rigidbody rb = GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
+                return; 
+            }
+
+            if (collision.collider.CompareTag("Finish")) {
+                buttonRetry.SetActive(true);
+                victoryText.SetActive(true);
+                buttonEdit.SetActive(false);
+                ball.SetActive(false);
                 return; 
             }
 

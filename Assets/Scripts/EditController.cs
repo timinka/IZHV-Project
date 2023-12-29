@@ -12,11 +12,6 @@ public class EditController : MonoBehaviour, IPointerClickHandler
     public GameObject buttonEdit;
     public GameObject buttonDone;
 
-    void Start()
-    {
-        ball.SetActive(false);
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         dropdownMenu1.gameObject.SetActive(true);
